@@ -1,6 +1,8 @@
-import React from 'react';
-import { Card, Icon, Grid, Image, GridColumn } from 'semantic-ui-react';
-import './style.css';
+import React from "react";
+import { Card, Icon, Grid, Image, GridColumn } from "semantic-ui-react";
+import "./style.css";
+import { Link } from "react-router-dom";
+
 const CardSingular = props => {
   const extra = (
     <a>
@@ -13,7 +15,7 @@ const CardSingular = props => {
     <div>
       {props.lempar.posts.map(datum => {
         return (
-          <Grid>
+          <Grid container spacing={8}>
             <Grid.Column width={6}>
               <Image src={datum.seo.image} />
             </Grid.Column>
@@ -21,6 +23,9 @@ const CardSingular = props => {
               <p>{datum.seo.title}</p>
               <p>{datum.seo.description}</p>
               <p>{datum.author.display_name}</p>
+              <p>
+                <Link to={`/${datum.slug}`}>Read more ...</Link>
+              </p>
             </Grid.Column>
           </Grid>
         );
