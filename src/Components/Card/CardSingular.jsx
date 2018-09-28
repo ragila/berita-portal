@@ -1,16 +1,16 @@
 import React from "react";
-import { Card, Icon, Grid, Image, GridColumn } from "semantic-ui-react";
+import { Grid, Image } from "semantic-ui-react";
 import "./style.css";
 import { Link } from "react-router-dom";
 
 const CardSingular = props => {
-  const extra = (
-    <a>
-      <Icon name="user" />
-      Lihat Lebih Banyak
-    </a>
-  );
-  //   console.log(props.lempar.posts, '>>>>>>>>>>>>ini PROPS!!!');
+  // const extra = (
+  //   <a>
+  //     <Icon name="user" />
+  //     Lihat Lebih Banyak
+  //   </a>
+  // );
+  // console.log(props.lempar.posts, ">>>>>>>>>>>>ini PROPS!!!");
   return (
     <div>
       {props.lempar.posts.map(datum => {
@@ -20,7 +20,7 @@ const CardSingular = props => {
               <Image src={datum.seo.image} />
             </Grid.Column>
             <Grid.Column width={10}>
-              <p>{datum.seo.title}</p>
+              <h1>{datum.seo.title}</h1>
               <p>{datum.seo.description}</p>
               <p>{datum.author.display_name}</p>
               <p>

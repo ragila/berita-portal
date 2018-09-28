@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import CardLoading from "../../Components/Card/CardLoading";
+
 export default class DetailBerita extends Component {
   state = {
     data: [],
@@ -15,7 +17,7 @@ export default class DetailBerita extends Component {
         }`
       )
       .then(res => {
-        console.log(res, ">>>>>>> ini resss");
+        // console.log(res, ">>>>>>> ini resss");
         this.setState({
           data: res.data,
           loading: true
@@ -23,7 +25,7 @@ export default class DetailBerita extends Component {
       });
   }
   render() {
-    console.log(this.state.data, "ini kiee >>>>>>>>>>>>>."); //setiap Route pasti ada match
+    // console.log(this.state.data, "ini kiee >>>>>>>>>>>>>."); //setiap Route pasti ada match
     return (
       <div>
         {this.state.loading ? (
@@ -33,7 +35,7 @@ export default class DetailBerita extends Component {
             }}
           />
         ) : (
-          <h1> Loading sub Berita ... </h1>
+          <CardLoading />
         )}
       </div>
     );

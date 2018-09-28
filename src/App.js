@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Berita from "./Container/Berita/Berita";
 import SubBerita from "./Container/SubBerita/DetailBerita";
@@ -14,11 +13,10 @@ class App extends Component {
         <Switch>
           <Route path="/" component={Header} />
         </Switch>
-
         <Switch>
           <Route path="/" exact={true} component={Berita} />
-          <Route path="/:slug" component={SubBerita} />
           <Route path="/teknologi" component={Teknologi} />
+          <Route path="/:slug" component={SubBerita} />
         </Switch>
       </div>
     );
